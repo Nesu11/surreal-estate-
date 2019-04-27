@@ -1,4 +1,29 @@
-NavBar {
+.nav-bar  {
     background: white;
+    border-bottom: grey;
+    display: flex;
+    padding: 8px;
+    margin: 5px;
+
     
+}
+.logo {
+    display: inline-block;
+    display: flex;
+    padding: 8px;
+    
+}
+
+
+.nav {
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+}
+
+.item {
+    display: inline-block;
+    padding: 10px;
+    margin: 0px;
+
 }
