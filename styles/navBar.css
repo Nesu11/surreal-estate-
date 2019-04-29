@@ -1,19 +1,31 @@
 .nav-bar  {
-    background: white;
-    border-bottom: grey;
-    display: flex;
-    padding: 8px;
-    margin: 5px;
+    background: darkcyan;
+    border-bottom: whitesmoke;
+  
 
     
 }
 .logo {
     display: inline-block;
-    display: flex;
-    padding: 8px;
-    
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+}
+.logo:hover {
+    cursor: pointer;
+    background: rgb(107, 210, 210)
 }
 
+.icon {
+    display: inline-block;
+    color: white;
+    padding-right: 5px;
+}
+
+.icon:hover {
+    cursor: pointer;
+    background: rgb(107, 210, 210)
+  }
 
 .nav {
     display: inline-block;
@@ -25,5 +37,15 @@
     display: inline-block;
     padding: 10px;
     margin: 0px;
+    color: white;
+    font-weight: 25;
 
 }
+
+.item:hover {
+    cursor: pointer;
+    background: rgb(107, 210, 210);
+
+  }
+
+

@@ -7,16 +7,16 @@ import { faIgloo } from '@fortawesome/free-solid-svg-icons';
 library.add(faIgloo);
 
 const NavBar = () => (
-  <div>
-    <div className="nav-bar"> My Nav Bar </div>
+  <div className="nav-bar">
     <div className="logo">
-      <FontAwesomeIcon icon="igloo" />
-      Surreal Estate
+      <FontAwesomeIcon className="icon" icon="igloo"  />
+     Surreal Estate
     </div>
     <ul className="nav">
-      <li className="item" />
-      <li className="item" />
+      <li className="item"> View Properties </li>
+      <li className="item">Add a property </li>
     </ul>
+
   </div>
 
 );
