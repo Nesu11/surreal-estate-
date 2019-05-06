@@ -1,4 +1,11 @@
 .AddProperty {
     padding: 5px;
+    margin: 5px;
+    flex-wrap: wrap;
 
+}
+
+[name=title] {
+    margin-right: 1px;
+    display: block;
 }
