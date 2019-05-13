@@ -1,0 +1,49 @@
+.propertyCard {
+    padding: 5px;
+    background: white;
+}
+
+
+.type {
+    font-style: italic
+}
+
+.city {
+    font-style: italic
+}
+
+
+.header {
+    padding: 20px;
+    text-align: center;
+    background: rgb(191, 205, 205);
+    font-size: 2em
+  
+}
+
+
+.bedrooms {
+    padding-left:5px;
+}
+
+.bathrooms {
+    padding-left: 5px;
+}
+
+.price {
+    padding-left: 5px;
+}
+.email {
+    padding-left: 5px;
+    color: white;
+    display: inline-block;
+}
+
+.mail-icon {
+    color: white;
+    padding-left: 2px;
+}
+
+.email-box {
+    background: darkcyan;
+}

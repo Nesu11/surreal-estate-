@@ -59,11 +59,11 @@ class AddProperty extends React.Component {
       <div className="AddProperty"> 
      
         <form onSubmit={this.handleAddProperty}>
-          <div> Property Discription
+          <div> Property Description
             <input className="discription" name="title" value={this.state.fields.title} onChange={this.handleFieldChange} placeholder="discription" />
-            </div>
+          </div>
 
-            <div> Type   
+          <div> Type   
               
             <select className="propertyType" name="type" value={this.state.fields.type} onChange={this.handleFieldChange}>
               <option value="flat">Flat</option>
@@ -73,7 +73,7 @@ class AddProperty extends React.Component {
               <option value="end of terrace">End of Terrace</option>
               <option value="cottage">Cottage</option>
             </select>
-            </div>
+          </div>
           
 
           <div>
@@ -88,16 +88,16 @@ class AddProperty extends React.Component {
 
           <div>
             Price
-          <input className="addPrice" name="price" value={this.state.fields.price} onChange={this.handleFieldChange} placeholder="price" type="number" />
+            <input className="addPrice" name="price" value={this.state.fields.price} onChange={this.handleFieldChange} placeholder="price" type="number" />
           </div>
 
           <div> Location
-          <select className="location" name="city" value={this.state.fields.city} onChange={this.handleFieldChange}>
-            <option value="Manchester">Manchester</option>
-            <option value="Sheffield">Sheffield</option>
-            <option value="Leeds">Leeds</option>
-            <option value="Liverpool">Liverpool</option>
-          </select>
+            <select className="location" name="city" value={this.state.fields.city} onChange={this.handleFieldChange}>
+              <option value="Manchester">Manchester</option>
+              <option value="Sheffield">Sheffield</option>
+              <option value="Leeds">Leeds</option>
+              <option value="Liverpool">Liverpool</option>
+            </select>
           </div>
 
           <div> Email
