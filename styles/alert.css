@@ -1,0 +1,12 @@
+.Alert.success {
+background-color:rgb(78, 159, 78);
+color:white;
+display:block;
+}
+
+.Alert {
+    background-color: rgb(233, 100, 100);
+    color:white;
+    width:100%;
+    display: inline-block;
+}

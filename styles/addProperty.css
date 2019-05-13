@@ -1,7 +1,66 @@
-.AddProperty {
-    padding: 5px;
+.discription {
+    width: 150px;
+    padding:4px 10px;
     margin: 5px;
-    flex-wrap: wrap;
+    box-sizing: border-box;
+    display:flex;
+
+}
+
+.propertyType {
+    width: 150px;
+    padding:4px 10px;
+    margin: 5px;
+    box-sizing: border-box;
+    display:flex;
+}
+
+.addBedrooms {
+    width: 150px;
+    padding:4px 10px;
+    margin: 5px;
+    box-sizing: border-box;
+    display:flex;
+}
+
+.addBathrooms {
+    width: 150px;
+    padding:4px 10px;
+    margin: 5px;
+    box-sizing: border-box;
+    display:flex;
+
+}
+
+.location {
+    width: 150px;
+    padding:4px 10px;
+    margin: 5px;
+    box-sizing: border-box;
+    display:flex;
+}
+
+.addPrice {
+    width: 150px;
+    padding:4px 10px;
+    margin: 5px;
+    box-sizing: border-box;
+    display:flex;
+}
+
+.contactEmail {
+    width: 150px;
+    padding:4px 10px;
+    margin: 5px;
+    box-sizing: border-box;
+    display:flex;
+}
+
+.addButton {
+    padding: 3px;
+    margin: 5px;
+    color:darkcyan;
+    font-weight: bold;
 
 }
 
