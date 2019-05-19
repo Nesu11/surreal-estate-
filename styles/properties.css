@@ -1,6 +1,17 @@
 .properties {
-    display: flex;
-    height: auto;
-    min-width: auto;
-    padding: 7px
+    padding: 0.5rem;;
 }
+
+.properties > .col {
+    display:inline-block;
+    width: 33.33%;
+    padding: 0.18rem;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    display: inline-block;
+    background-color: #111; 
+    margin: 0;
+    padding: 0;
+  }
