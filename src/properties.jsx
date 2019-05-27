@@ -3,7 +3,7 @@ import PropertyCard from './property-card';
 import '../styles/properties.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import qs from 'qs'
+import qs from 'qs';
 
 const URL_DATA = 'http://localhost:3000/api/v1/PropertyListing';
 
@@ -15,6 +15,7 @@ class Properties extends React.Component {
       properties: [],
       error: false,
       alertMessage: '',
+      search: '',
 
     };
   }
@@ -22,7 +23,7 @@ class Properties extends React.Component {
   componentDidMount() {
     axios.get(URL_DATA)
       .then(response => this.setState({ properties: response.data }))
-      .catch(() => { 
+      .catch(() => {
         this.setState({
           error: true,
           alertMessage: 'Unable to load properties. Please try again later.',
@@ -46,19 +47,44 @@ class Properties extends React.Component {
 
     const newQueryParams = {
       ...currentQueryParams,
-      [operation]: JSON.stringify(valueObj)
+      [operation]: JSON.stringify({
+        ...JSON.parse(currentQueryParams[operation] || '{}'),
+        ...valueObj,
+      }),
+
     };
+    return qs.stringify(newQueryParams, { addQueryPrefix: true, encode: false });
+  };
+
+  handleSearch = event => {
+    event.preventDefault();
+    const { search } = this.state;
+    const newQueryString = this.buildQueryString('query', { title: { $regex: search } });
+    const { history } = this.props;
+    history.push(newQueryString);
   };
 
   render() {
     return (
       <div className="properties">
         <div className="sideBar">
-        <span className="filter"> Filter by City </span>
-          <Link to={'/?query={"city": "Manchester"'}> Manchester </Link> 
-          <Link to={'/?query={"city": "Sheffield"}'}> Sheffield </Link> 
-          <Link to={'/?query={"city": "Leeds"}'}> Leeds </Link> 
-          <Link to={'/?query={"city": "Liverpool"}'}> Liverpool </Link> 
+          <form onSubmit={this.handleSearch}>
+            <input
+              type="text"
+              value={this.state.search}
+              onChange={event => this.setState({ search: event.target.value })}
+            />
+
+            <button type="submit">Search</button>
+          </form>
+          <span className="filter"> Filter by City </span>
+          <Link to={this.buildQueryString('query', { city: 'Manchester' })}> Manchester </Link>
+          <Link to={this.buildQueryString('query', { city: 'Sheffield' })}> Sheffield </Link>
+          <Link to={this.buildQueryString('query', { city: 'Leeds' })}> Leeds </Link>
+          <Link to={this.buildQueryString('query', { city: 'Liverpool' })}> Liverpool </Link>
+          <span className="sortBy">Sort by</span>
+          <Link to={this.buildQueryString('sort', { price: -1 })}>Price Descending</Link>
+          <Link to={this.buildQueryString('sort', { price: 1 })}> Price Ascending</Link>
         </div>
 
         {this.state.properties.map(property => (
