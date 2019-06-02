@@ -22,7 +22,7 @@ class Properties extends React.Component {
 
   componentDidMount() {
     axios.get(URL_DATA)
-      .then(response => this.setState({ properties: response.data }))
+      .then((response) => this.setState({ properties: response.data }))
       .catch(() => {
         this.setState({
           error: true,
@@ -64,6 +64,15 @@ class Properties extends React.Component {
     history.push(newQueryString);
   };
 
+  handleSaveProperty = (propertyId) => {
+    const { userId } = this.props;
+
+    axios.post('http://localhost:3000/api/v1/Favourite', {
+      propertyListing: propertyId,
+      fbUserId: userId,
+    });
+  };
+
   render() {
     return (
       <div className="properties">
@@ -87,11 +96,17 @@ class Properties extends React.Component {
           <Link to={this.buildQueryString('sort', { price: 1 })}> Price Ascending</Link>
         </div>
 
-        {this.state.properties.map(property => (
-          <div key={property._id} className="col">
-            <PropertyCard {...property} />
-          </div>
-        ))}
+        <div className="col-div">
+          {this.state.properties.map(property => (
+            <div key={property._id} className="col">
+              <PropertyCard
+                userId={this.props.userId}
+                {...property}
+                onSaveProperty={this.handleSaveProperty}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     );
   }

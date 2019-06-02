@@ -25,9 +25,17 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <NavBar onLogin={this.handleLogin} userId={this.state.userId} onLogout={this.handleLogout} />
+        <NavBar
+          onLogin={this.handleLogin}
+          userId={this.state.userId}
+          onLogout={this.handleLogout}
+        />
         <Switch>
-          <Route exact path="/" component={Properties} />
+          <Route
+            exact
+            path="/"
+            render={props => <Properties {...props} userId={this.state.userId} />}
+          />
           <Route exact path="/add-property" component={AddProperty} />
         </Switch>
       </div>

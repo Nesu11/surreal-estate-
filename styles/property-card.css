@@ -47,3 +47,8 @@
 .email-box {
     background: darkcyan;
 }
+
+.save {
+text-decoration: none;
+color: rgb(174, 148, 2);
+}
